@@ -1,6 +1,5 @@
 package Mail::Box::Parser::C;
-our $VERSION = 2.033;
-require 5.008;
+our $VERSION = 2.034;
 
 use strict;
 use warnings;
@@ -153,7 +152,6 @@ sub openFile($)
 
     if(my $file = $args->{file})
     {   my $name = $args->{filename} || "$file";
-warn "Using C parser for $name\n";
         $boxnr   = open_filehandle($file, $name, $log{trace});
     }
     else
