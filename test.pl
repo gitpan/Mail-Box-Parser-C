@@ -1,17 +1,18 @@
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl test.pl'
 
-#########################
+use Test::More;
+BEGIN
+{
+    eval "require Mail::Box::Parser";
+    if($@)
+    {
+warn $@;
+         plan skip_all =>
+             "Skipping tests, because MailBox is not installed (yet)\n";
+         exit 0;
+    }
 
-# change 'tests => 1' to 'tests => last_test_to_print';
+    plan tests => 1;
+}
 
-use Test;
-BEGIN { plan tests => 1 };
-use Mail::Box::Parser::C;
-ok(1); # If we made it this far, we're ok.
-
-#########################
-
-# Insert your test code below, the Test module is use()ed here so read
-# its man page ( perldoc Test ) for help writing this test script.
-
+require Mail::Box::Parser::C;
+ok(1);
