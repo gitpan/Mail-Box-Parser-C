@@ -1,9 +1,11 @@
-Changes
 C.pm
+C.pod
 C.xs
+Changes
 LICENSE
-Makefile.PL
 MANIFEST
+META.yml
+Makefile.PL
 README
 test.pl
-META.yml
+META.json                                Module JSON meta-data (added by MakeMaker)
